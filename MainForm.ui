@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>747</width>
+    <height>383</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>450</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>URW Gothic [UKWN]</family>
+    <pointsize>13</pointsize>
+    <weight>50</weight>
+    <italic>true</italic>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="tabletTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Расчёт зарплаты  в такси</string>
+  </property>
+  <property name="animated">
+   <bool>false</bool>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::ForceTabbedDocks|QMainWindow::VerticalTabs</set>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QFrame" name="frame_tableShifts">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>2</number>
+      </property>
+      <property name="midLineWidth">
+       <number>3</number>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QTableView" name="tableView_shifts">
+         <property name="minimumSize">
+          <size>
+           <width>500</width>
+           <height>250</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>1200</width>
+           <height>400</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Waree</family>
+           <pointsize>13</pointsize>
+           <weight>75</weight>
+           <italic>true</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="inputMethodHints">
+          <set>Qt::ImhDigitsOnly</set>
+         </property>
+         <property name="lineWidth">
+          <number>2</number>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+         </property>
+         <property name="textElideMode">
+          <enum>Qt::ElideMiddle</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menBbar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>747</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_setting">
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="title">
+     <string>Меню настройки</string>
+    </property>
+    <addaction name="action_addRow"/>
+    <addaction name="action_removeRow"/>
+    <addaction name="separator"/>
+    <addaction name="action_saveSetting"/>
+    <addaction name="action_saveTariff"/>
+   </widget>
+   <widget class="QMenu" name="menu_shifts">
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="title">
+     <string>Меню смен</string>
+    </property>
+    <property name="separatorsCollapsible">
+     <bool>false</bool>
+    </property>
+    <addaction name="action_addShift"/>
+    <addaction name="action_removeShift"/>
+    <addaction name="action_calculatedShift"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menu_setting"/>
+   <addaction name="menu_shifts"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="dockWidget_setting">
+   <property name="maximumSize">
+    <size>
+     <width>250</width>
+     <height>350</height>
+    </size>
+   </property>
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <property name="features">
+    <set>QDockWidget::DockWidgetClosable</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Настройка оплаты</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="widgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QDateEdit" name="dateEdit_shiftSelected">
+         <property name="displayFormat">
+          <string>dd.MM.yy</string>
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_selectTariff">
+         <item>
+          <property name="text">
+           <string>Эконом</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Эконом+</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Комфорт</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Комфорт+</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableView" name="tableView_settingTariff">
+         <property name="maximumSize">
+          <size>
+           <width>170</width>
+           <height>200</height>
+          </size>
+         </property>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>80</number>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="action_addRow">
+   <property name="text">
+    <string>Добавить строку</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+  </action>
+  <action name="action_removeRow">
+   <property name="text">
+    <string>Удалить строку</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+  </action>
+  <action name="action_addShift">
+   <property name="text">
+    <string>Добавить смену</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+  </action>
+  <action name="action_removeShift">
+   <property name="text">
+    <string>Удалить смену</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+  </action>
+  <action name="action_calculatedShift">
+   <property name="text">
+    <string>Расчитать смену</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+  </action>
+  <action name="action_saveSetting">
+   <property name="text">
+    <string>Сохранить настройки</string>
+   </property>
+  </action>
+  <action name="action_saveTariff">
+   <property name="text">
+    <string>Сохранить тариф</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
